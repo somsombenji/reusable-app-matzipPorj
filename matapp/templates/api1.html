@@ -67,20 +67,20 @@
         </div>
         <!--navbar 끝-->
         <center>
-            <h3>유메</h3>
+            <h3>The Bean Market</h3>
             <div id="map" style="width:30%;height:400px;"></div><br><br>
 
             <script>
                 //var HOME_PATH = window.HOME_PATH || '.';
-            //유메
-            var youme = new naver.maps.LatLng(37.531602, 127.119027),
+            //빈마켓
+            var bean = new naver.maps.LatLng(37.531602, 127.119027),
                 map = new naver.maps.Map('map', {
-                    center: youme.destinationPoint(0, 500),
+                    center: bean.destinationPoint(0, 500),
                     zoom: 19
                 }),
                 marker = new naver.maps.Marker({
                     map: map,
-                    position: youme
+                    position: bean
                 });
 
             var contentString = [
