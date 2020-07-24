@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     #provider
     'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.kakao',
 ]
 
 MIDDLEWARE = [
