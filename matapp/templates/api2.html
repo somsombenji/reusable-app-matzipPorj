@@ -1,0 +1,42 @@
+{%extends 'base.html'%}
+{%block contents%}
+<h3>셀프하우스</h3>
+<div id="map" style="width:30%;height:400px;"></div><br><br>
+
+<script>
+    //셀프하우스
+var maneul = new naver.maps.LatLng(37.5323395,127.1215945),
+    map = new naver.maps.Map('map', {
+        center: maneul.destinationPoint(0, 500),
+        zoom: 19
+    }),
+    marker = new naver.maps.Marker({
+        map: map,
+        position: maneul
+    });
+
+var contentString = [
+        '<div class="iw_inner">',
+        '   <h3>셀프하우스</h3>',
+        '   <p>주메뉴: 분식<br />',
+        '   주관적 평가: ★★★☆☆<br />',
+        '       추천메뉴: 마늘떡볶이<br / >',
+        '   </p>',
+        '</div>'
+    ].join('');
+
+var infowindow = new naver.maps.InfoWindow({
+    content: contentString
+});
+
+naver.maps.Event.addListener(marker, "click", function(e) {
+    if (infowindow.getMap()) {
+        infowindow.close();
+    } else {
+        infowindow.open(map, marker);
+    }
+});
+
+infowindow.open(map, marker);
+</script>
+{%endblock%}

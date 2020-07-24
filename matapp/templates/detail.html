@@ -1,0 +1,42 @@
+{%extends 'base.html'%}
+{%block head%}
+<style>
+    .header {margin: 50px 0px;}
+
+    img {margin: 10px;}
+
+    .body {
+        margin: 30px 0px 80px 0px;
+        color: #4C4C4C;
+    }
+
+    .contents {
+        width:60%;
+        text-align: left;
+    }
+
+    .pub_date {
+        font-size: 13px;
+        color:#4C4C4C;
+    }
+</style>
+{%endblock%}
+
+{%block contents%}
+
+
+<div class="contents">
+    <div class="header">
+        <h3 class="title">{{data.title}}</h3>
+        <p class="pub_date">{{data.pub_date}}</p>
+    </div>
+    <img src="{{data.image.url}}" height="200px">
+    <img src="{{data.image2.url}}" height="200px">
+    <p class="body">{{data.body}}</p>
+
+    <button type="button" class="btn btn-secondary" onclick="location.href='http://127.0.0.1:8000/blog/'">목록</button> &nbsp;&nbsp;&nbsp;
+    <button type="button" class="btn btn-light" onclick="location.href='http://127.0.0.1:8000/blog/delete/{{data.id}}'">삭제</button>
+    <button type="button" class="btn btn-light" onclick="location.href='http://127.0.0.1:8000/blog/update/{{data.id}}'">수정</button>
+</div>
+
+{%endblock%}

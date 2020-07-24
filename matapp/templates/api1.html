@@ -1,0 +1,46 @@
+{%extends 'base.html'%}
+{%block contents%}
+
+<h3>유메</h3>
+<div id="map" style="width:30%;height:400px;"></div><br><br>
+
+<script>
+    //var HOME_PATH = window.HOME_PATH || '.';
+//유메
+var youme = new naver.maps.LatLng(37.5318626,127.1212833),
+    map = new naver.maps.Map('map', {
+        center: youme.destinationPoint(0, 500),
+        zoom: 19
+    }),
+    marker = new naver.maps.Marker({
+        map: map,
+        position: youme
+    });
+
+var contentString = [
+        '<div class="iw_inner">',
+        '   <h3>유메</h3>',
+        '   <p>주메뉴: 일식<br />',
+        '   주관적 평가: ★★★★☆<br />',
+        '       추천메뉴: 김치치즈나베<br / >',
+        '   </p>',
+        '</div>'
+    ].join('');
+
+var infowindow = new naver.maps.InfoWindow({
+    content: contentString
+});
+
+naver.maps.Event.addListener(marker, "click", function(e) {
+    if (infowindow.getMap()) {
+        infowindow.close();
+    } else {
+        infowindow.open(map, marker);
+    }
+});
+
+infowindow.open(map, marker);
+
+</script>
+
+{%endblock%}

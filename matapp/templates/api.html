@@ -1,0 +1,115 @@
+{%load socialaccount%}
+
+{%providers_media_js%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mat.zip</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=yxsxeshj60"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+        <style>
+             @font-face {
+                font-family: 'UhBeeSeulvely';
+                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeeSeulvely.woff') format('woff');
+                font-weight: normal;
+                font-style: normal;
+                    }
+
+            @font-face {
+                font-family: 'NanumSquareRound';
+                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+                font-weight: normal;
+                font-style: normal;
+                }
+
+            body {font-family: 'NanumSquareRound';}
+        
+            #blog_title {
+                /*color: #933B3B;*/
+                font-family: 'UhBeeSeulvely';
+            }
+
+            footer {
+                width: 60%;
+                margin-top: 80px;
+            }
+
+            .contents {
+            text-align: left;
+            float: left;
+            width: 60%;
+            overflow: auto;
+            padding-top: 10px;
+        }
+
+            .posts_all {
+                width: 60%;
+                margin-bottom: 50px;
+                min-height: 500px;
+            }
+            .title {
+                height: 50px;
+                text-align: left;
+                border-bottom: solid 1px #664B00;
+                color: #664B00;
+                font-weight: bold;
+                margin-top: 50px;
+            }
+            .post {
+                border-bottom: solid 1px #D5D5D5;
+                overflow:auto;
+                padding: 10px;
+            }
+
+            .post:hover {
+                opacity: 0.7;
+        }
+        </style>
+    </head>
+    <body>
+        <!--navbar-->
+        <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+            <h5 class="my-0 mr-md-auto" id="blog_title">Mat.zip</h5>
+            <nav class="my-2 my-md-0 mr-md-3">
+                <a class="p-2 text-dark" href="{%url 'index'%}">소개</a>
+                <a class="p-2 text-dark" href="{%url 'home'%}">Mat.zip</a>
+                <a class="p-2 text-dark" href="{%url 'api'%}">위치 소개</a>
+            </nav>
+        </div>
+
+        <!--navbar 끝-->
+
+        <center>
+            <div class="posts_all">
+                <div class="title">
+                    <h6>위치 소개</h6>
+                </div>
+            <div class="post" onclick="location.href='http://127.0.0.1:8000/api/1'">
+                <div class="contents">
+                    <h5 class="title_p">유메 위치</h5>
+                </div>
+            </div>
+            
+            <div class="post" onclick="location.href='http://127.0.0.1:8000/api/2'">
+                <div class="contents">
+                    <h5 class="title_p">셀프하우스 위치</h5>
+                </div>
+            </div>
+            
+            <div class="post" onclick="location.href='http://127.0.0.1:8000/api/3'">
+                <div class="contents">
+                    <h5 class="title_p">하얀집 위치</h5>
+                </div>
+            </div>
+        <footer>
+            <hr>
+            <p>Mat.zip</p>
+            <p>&copy;김세정, 2020.07.23 만듦</p>
+        </footer>
+        </center>
+        </body>
+</html>
